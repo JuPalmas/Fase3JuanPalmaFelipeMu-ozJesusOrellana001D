@@ -1,0 +1,84 @@
+{% extends "base_generic.html" %}
+
+{% block title%}<title>ComPutin - Agregar Producto</title>{% endblock %}
+
+{% block content %}
+    {% if user.username == "computin" %}
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="container-fluid">
+                <div class="container p-5 my-5 border" style="background-color: ghostwhite; margin-top: 20%; height: 120%;">
+                    <div class="titulo-prin">
+                        <h1>Administración Producto</h1>
+                    </div>
+                    <div class="form-top-left">
+                        <div class="titulos-p">
+                            <h2 for="">ID: </h2>
+                         </div>
+                        <div class="cajaTexto">
+                            {{ form.idProd }}
+                         </div>
+                        <div class="titulos-p">
+                            <h2 for="">Nombre Producto: </h2>
+                         </div>
+                        <div class="cajaTexto">
+                            {{ form.NombreProd }}
+                         </div>
+                        <div class="titulos-p">
+                            <h2 for="">Marca: </h2>
+                         </div>
+                        <div class="cajaTexto">
+                            {{ form.MarcaProd }}
+                         </div>
+                        <div class="titulos-p">
+                            <h2 for="">Categoria Producto: </h2>
+                         </div>
+                        <div class="cajaTexto">
+                            {{ form.CategoriaProd }}
+                         </div>
+                        <div class="titulos-p">
+                           <h2 for="">Categoria Especial: </h2>
+                         </div>
+                        <div class="cajaTexto">
+                            {{ form.CategoriaEsp }}
+                         </div>
+                        <div class="titulos-p">
+                         <h2 for="">Precio: </h2>
+                         </div>
+                        <div class="cajaTexto">
+                         {{ form.PrecioProd }}
+                         </div>
+                        <div class="titulos-p">
+                         <h2 for="">Stock: </h2>
+                         </div>
+                        <div class="cajaTexto">
+                         {{ form.StockProd }}
+                         </div>
+                    </div>
+                    <div class="form-bottom-rigth">
+                        <div class="img-pro">
+                            <div class="cajai">
+                                {{ form.imageProd }}
+                            </div>
+                       </div>
+                       <div class="des-pro" >
+                            <div class="titulos-p">
+                                <h2>Descripcion: </h2>
+                            </div>
+                            <div class="cajaTexto" >
+                                {{ form.DescripciónProd }}
+                            </div>
+                       </div>
+                    </div>
+                   <div class="cajabtn">
+                       <input type="submit"  class="btn btn-warning" value="Guardar">
+                   </div>
+                </div>
+            </div>
+        </form>
+    {% else %}
+        <div class="container p-5 my-5 border" style="background-color: ghostwhite; margin-top: 20%; height: 120%;">
+            <h1>No tienes permisos para acceder a este contenido.</h1>
+        </div>
+    {% endif %}
+{% endblock %}

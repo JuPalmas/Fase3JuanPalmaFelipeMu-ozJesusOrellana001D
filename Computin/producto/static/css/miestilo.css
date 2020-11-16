@@ -1,0 +1,601 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;    
+}
+
+body{
+    background-image: url(../img/micro_carbon_@2X.png);
+}
+/*Estilos del Header*/
+header
+{
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  background-image: url(../img/banner\ 2.png);
+  z-index: 3;
+  border-radius: 10px;
+}
+.menu
+{
+    width: 100%;
+    height: 100%;
+}
+.logo
+{
+    width: 40%;    
+}
+
+.logo img
+{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    z-index: 100;
+}
+.secion
+{
+    display: inline-flex;
+    position: relative;
+    left: 45%;
+    top:-39px;
+}
+.menu-top
+{
+    height: 100%;
+    width: 20%;
+    position: relative;
+    left: -40px;
+    top:-105px;
+    float: right;
+}
+
+#barra
+{
+   background-image: url(../img/banner\ 2.png);
+   width: 150px;
+   height: 600px;
+   position: relative;
+   top: 0;
+   right: -300px;
+   float: right;
+}
+#barra.active
+{
+    transition-duration: 1s;
+    right: -20%;
+}
+#horizontal li
+{
+    width: 100%;
+    height: 50px;
+    padding: 6px;
+    list-style: none;
+}
+.hori-corec
+{
+    width: 100%;
+    height: 1px;
+    position: absolute;
+}
+.opcion 
+{
+    width: 100%;
+    height: 50px;
+    padding: 6px;
+    display: inline-block;
+    list-style: none;
+    
+}
+
+.opcion-a
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration-line: none;
+    color:white;
+    text-align:center ;
+}
+.fas
+{
+    margin-right: 10px;
+    
+}
+.opcion-prod li
+{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    list-style: none;
+}
+.opcion-prod a
+{
+    display: block;
+    color: white;
+    width: 145px;
+    height:40px;
+    text-decoration-line: none;
+    position: relative;
+    left: -10px;
+    top: -10px;
+}
+.opcion-prod2 li
+{
+    height:50px;
+
+}
+.opcion-prod2 a
+{
+    display: block;
+    color: red;
+    width: 100%;
+    height:50px;
+    text-decoration-line: none;
+    position: relative;
+}
+#barra li:hover
+{
+    background: tomato;
+}
+#barra a:hover
+{
+    color: black;
+}
+.opcion-p
+{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    display: inline-block;
+    color:white;
+}
+.opcion:hover .opcion-prod
+{
+   display: block;
+
+}
+
+.opcion-prod
+{
+    display: none;
+    width:110%;
+    height: 40px;
+    background: red;
+    position: relative;
+    top:-144px;
+    left:-170px;
+    text-align: center;
+}
+.opcion-p:hover .prod-comp
+{
+    display: block;
+}
+.prod-comp
+{
+    display: none;
+    width:119%;
+    height: auto;
+    background-image: url(../img/banner\ 2.png);
+    position: relative;
+    top:-50px;
+    left:-182px;
+    text-align:center ;
+}
+
+.opcion-prod2
+{
+    display: none;
+    background:none;
+    text-align: center;
+    width: 110%;
+    height: 200px;
+    padding-top: 20px;
+    position: relative;
+    left: -5px;
+}
+.opcion:hover .opcion-prod2
+{
+   display: block;
+
+}
+label
+{
+    position: relative;
+    bottom: -70px;
+    left: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+/*Estilos del Section*/
+#separador_header{
+    height:110px ;
+}
+.modal-body .row 
+{
+
+    height: 40px;
+    margin: 5px;
+    
+}
+
+#title_anuncios
+{
+    background-color:#03a3b8ee;
+    
+}
+
+.imagen_publi
+{
+    background-color: #038fa1ee ;
+    
+}
+#separador_footer
+{
+    height: 50px;
+    width: 100%;
+}
+
+/*Estilo del Footer*/
+footer 
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(5, 67, 126);
+    color: rgb(195, 185, 240);
+    text-align: center;
+    z-index: 2;
+ }
+
+ footer img 
+ {
+     width: 40px;
+     height: 40px;
+ }
+ img.middle 
+{
+    vertical-align: middle;
+}
+
+/*Estilo del tab*/
+
+.tablink 
+{
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 33.33%;
+  transition: 600ms;
+  
+}
+
+.tablink:hover 
+{
+  background-color: #777;
+}
+
+.tabcontent 
+{
+  color: black;
+  display: none;
+  padding: 50px 20px;
+  height: 100%;
+  
+}
+
+#carousel1
+{
+    z-index: 1;
+}
+
+#DESTACADO,#OFERTAS,#POPULARES
+{
+    background-color: whitesmoke;
+    border-radius: 15px;
+}
+.col-md
+{
+    margin-top: 10px;
+}
+.card-title
+{
+    color: black;
+    height: 60px;
+    font-size: 60%;
+}
+
+.card-text
+{
+    color: black;
+    height: 20px;
+    font-size: 70%;
+}
+.imagendecard
+{
+    width: 100px;
+    height: 100px;
+}
+section
+{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.modal-content label 
+{
+    color: black;
+    display: flex;
+    position: relative;
+    top: 0;
+}
+p.from-control
+{
+    width: 400px;
+    height: 50px;
+}
+
+.producto
+{
+    display: inline-block;
+}
+@media (min-width:500px) and (max-width:600px)
+{
+    .menu-top
+    {
+        left: 0;
+    }
+    .secion
+    {
+        left: 65%;
+    }
+}
+@media (min-width: 600px){
+
+
+    header
+    {
+      height: 110px;
+    }
+
+    .logo
+    {
+        width: 160px;
+        height: 110px;
+        text-align: center;
+    }
+
+    .logo img
+    {
+        width: 110px;
+        height:110px;
+    }
+    
+    .menu-top
+    {
+      display: none;
+    }
+
+    #barra
+    {
+        background-image: url(../img/banner\ 2.png);
+        width: 80%;
+        height: 110px;
+        position: relative;
+        top: -110px;
+        left:40px;
+        transition-duration: 0s;
+    }
+    #barra.active
+    {
+        transition-duration: 0s;
+    }
+    #barra .horizontal
+    {
+        height: 100%;
+        position: relative;
+        top: 65px;
+
+    }
+    .opcion
+    {
+        display:inline-block;
+        width: 22%;
+        height: 100%;
+    }
+    .hori-corec
+    {
+        width:700%;
+        height:0;
+        position: relative;
+        top:6px;
+        left: -285%;
+        display: block;
+        
+    }
+    .opcion-prod
+    {
+        width:19%;
+        height:40px;
+        position: relative;
+        top:0;
+        float: right;
+        margin: 0;
+        text-align: center;
+    } 
+    .opcion-prod2
+    {
+        float: left;
+        position: relative;
+        top: -14px;
+    }
+    .prod-comp
+    {
+        width:100%;
+        background-image: url(../img/banner\ 2.png);
+        position: absolute;
+        top: 40px;
+        left:0;
+        text-align:center ;
+    }
+
+    .opcion-p 
+    {
+        background-image: url(../img/banner\ 2.png);
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+    }  
+    .opcion-p a
+    {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        left: -15px;
+    }    
+    section
+    {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+    .secion
+    {
+        left: 85%;
+        top:-90px;
+        z-index: 2;
+    }
+
+}
+
+
+
+/* estilos de productos*/
+.imagen_prod{
+    width: 100%;
+    margin-left: 5%;
+}
+
+.desc_prod{
+    margin-top: 15%;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: justify;
+}
+
+
+
+@media (min-width:800px) and (max-width:1000px)
+{
+    .hori-corec
+    {
+        left: -345%;
+    }
+    .opcion-prod
+    {
+        width:18%;
+    } 
+    .cards_productos{
+        max-width: 300px;
+    }
+
+    
+}
+
+@media (min-width:1000px) and (max-width:1200px)
+{
+
+    .hori-corec
+    {
+        left: -345%;
+    }
+    .opcion-prod
+    {
+        width:18%;
+    } 
+    .secion
+    {
+       left: 84%;
+       top:-91px;
+    }
+    
+}
+
+
+
+@media (min-width:1200px) and (max-width:1920px)
+{
+    .hori-corec
+    {
+        left: -345%;
+    }
+    .opcion-prod
+    {
+        width:18%;
+    } 
+    
+    .secion
+    {
+       left: 83%;
+       top:-91px;
+    }
+
+    .opcion-p a
+    {
+       
+        left: -30px;
+    }    
+    
+}
+
+
+.fondo_form_compra{
+    background-color: whitesmoke;
+    margin-left: 20%;
+    margin-right: 20%; 
+    border-radius: 10px;
+}
+
+
+
+.cards_productos{
+    background-image: url(../img/triangles.png);
+    border-radius: 20px;
+}
+
+
+/* estilos de formulario de compra */
+.formu
+{
+    padding-top: 50px;
+    width: 80%;
+    text-align: center;
+}
+.comprar
+{
+    width: 50%;
+    display: inline-block;
+}
+.container-sm label
+{
+    color: black;
+    top: 0;
+    float: left;
+}
+
+
+
+

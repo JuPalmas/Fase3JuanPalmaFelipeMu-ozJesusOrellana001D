@@ -1,0 +1,54 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+    <div class="container" style="background-color: whitesmoke;">
+        <hr><hr>
+        <div class="row">
+            <div class="btn btn-primary">
+                <a href="{% url 'password_reset' %}" style="color: white;">Cambiar mi contraseña</a>
+            </div>
+        </div>
+        <hr><hr>
+    </div>
+
+{% else %}
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="container-fluid">
+            <div class="container p-5 my-5 border" style="background-color: ghostwhite; margin-top: 20%; height: 120%;">
+                <div>
+                    <h2>Iniciar Sesión</h2>
+                    <hr>
+                    <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Usuario: </span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Ingrese un nombre para su usuario"   {{ form.username }}
+                    </div>
+
+                    <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Contraseña: </span>
+                          </div>
+                          <input type="password" class="form-control" placeholder="Ingrese su contraseña"   {{ form.password }}
+                    </div>
+                </div>  <br>
+                {% if form.errors %}
+                <p style="color: red;"> Usuario o contraseña incorrecta, Intenta nuevamente</p>
+                {% endif %}
+                <input class="btn btn-primary" type="submit" value="Ingresar">
+
+                <input type="hidden" name="Siguiente" value="{{ next }}"> <hr>
+                <p><a href="{% url 'password_reset' %}">Olvidé mi contraseña</a></p>
+            </div>
+        </div>
+    </form>
+{% endif %}
+
+
+
+
+{% endblock %}

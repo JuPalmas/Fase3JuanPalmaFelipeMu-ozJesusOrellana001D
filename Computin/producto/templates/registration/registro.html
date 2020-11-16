@@ -1,0 +1,65 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="container-fluid">
+            <div class="container p-5 my-5 border" style="background-color: ghostwhite; margin-top: 20%; height: 120%;">
+
+                    <h2>Registrar Sesión</h2>
+                    <hr>
+                    <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Usuario: </span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Ingrese un nombre para su usuario"   {{ form.username }}
+                    </div>
+                    <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Correo Electronico: </span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Ingrese su correo"   {{ form.email }}
+                    </div>
+                    <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Nombre: </span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Ingrese su nombre"   {{ form.first_name}}
+                    </div>
+                    <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Apellido: </span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Ingrese su apellido"   {{ form.last_name }}
+                    </div>
+                    <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Contraseña: </span>
+                          </div>
+                          <input type="password" class="form-control" placeholder="Ingrese su contraseña"   {{ form.password1 }}
+                    </div>
+                    <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Vuelva a escribir su contraseña: </span>
+                          </div>
+                          <input type="password" class="form-control" placeholder="Repita su contraseña"   {{ form.password2 }}
+                    </div>
+                    <br>
+                    {% if form.errors %}
+                    <p style="color: red;"> Ha ocurrido un error,Vuelva intentarlo nuevamente</p>
+                    {% endif %}
+
+                <input class="btn btn-primary" type="submit" value="Registrar">
+
+                <input type="hidden" name="Siguiente" value="{{ next }}"> <hr>
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+{% endblock %}

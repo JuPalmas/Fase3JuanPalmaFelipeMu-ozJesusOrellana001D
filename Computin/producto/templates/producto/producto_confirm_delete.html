@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm" style="background-color: ghostwhite;border-radius: 2px;">
+      <div class="container-fluid p-1 my-1 text-black" style="background-color: transparent; border-radius: 20px; text-align:center;">
+        {% if user.username == "computin" %}
+        <form action="" method="POST">
+            {% csrf_token %}
+		<br>
+		<br>
+		<br>
+		<br>
+            <input type="submit" class="btn btn-danger"value="Si,Eliminar">
+            <a href="https://pipatzo.pythonanywhere.com/producto_admin/" class="btn btn-primary">Volver</a>
+        </form>
+        {% else %}
+        <div>
+            <h1>No tienes permisos para acceder a este contenido.</h1>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base_generic.html' %}
+
+{% load carrito_tags %}
+
+{% block title %}Mis pedidos{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12" style="background-color: antiquewhite; border-radius: 5px;">
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Total</th>
+                                <th>Fecha</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for orden in object_list %}
+                                <tr>
+                                    <td>{{ orden.id }}</td>
+                                    <td>{{ orden.total|formato_moneda:"$" }}</td>
+                                    <td>{{ orden.creado_el|date:'d/m/Y H:i' }}</td>
+                                    <td><a href="{% url "detalle" orden.id %}" class="btn btn-info btn-sm">Ver detalle</a></td>
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td colspan="4">
+                                        <div class="alert alert-danger">No tienes ningún pedido todavía.</div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
