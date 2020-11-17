@@ -16,7 +16,7 @@
 
     {% if producto_list %}
         <div class="container-fluid">
-            <div class="row cards_productos" style="margin-left: 6%;margin-right: 6%;">
+            <div class="row cards_productos" style="margin-left: 6%;margin-right: 6%;max-width: 100%;">
             {% for producto in producto_list %}
                 <div class="col-md tamañoCartas" style="max-width: 100%;">
                     <div class="card text-center border-secondary bg-light" >
@@ -24,7 +24,7 @@
                         <a href="{{ producto.get_absolute_url }}"><p class="card-title">{{ producto.NombreProd }}</p></a>
                         <a href="{{ producto.get_absolute_url }}"><img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto"></a>
                             <div class="card-footer bg-light">
-                                <div class="shadow-lg w-10 p-1 bg-light rounded">
+                                <div>
                                     <div class="alert alert-primary">
                                     ${{ producto.PrecioProd }}
                                     </div>

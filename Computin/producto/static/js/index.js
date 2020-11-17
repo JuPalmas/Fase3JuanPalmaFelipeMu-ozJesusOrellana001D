@@ -13,7 +13,7 @@ btn_menu.addEventListener("click" , function()
 const btnMarca = document.getElementById("btnMarca");
 
 /*Tab*/
-function openPage(pageName, elmnt, color) 
+function openPage(pageName, elmnt, color)
 {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -25,7 +25,7 @@ function openPage(pageName, elmnt, color)
 
   tablinks = document.getElementsByClassName("tablink");
   /*elimina a todos los botones su color*/
-  for (i = 0; i < tablinks.length; i++) 
+  for (i = 0; i < tablinks.length; i++)
   {
     tablinks[i].style.backgroundColor = "";
   }
@@ -37,4 +37,8 @@ function openPage(pageName, elmnt, color)
 }
 /*al entrar la pagina hace que clase defaultOpen haga un click en un boton*/
 document.getElementById("defaultOpen").click();
+
+function ingresarBoton() {
+        document.getElementById("demo2").style.display ="block";
+}
 
