@@ -38,7 +38,9 @@ function openPage(pageName, elmnt, color)
 /*al entrar la pagina hace que clase defaultOpen haga un click en un boton*/
 document.getElementById("defaultOpen").click();
 
-function ingresarBoton() {
-        document.getElementById("demo2").style.display ="block";
-}
+/*animacion de boton login*/
 
+function ingresarBoton()
+{
+    document.getElementById("demo2").style.display = "block";
+}

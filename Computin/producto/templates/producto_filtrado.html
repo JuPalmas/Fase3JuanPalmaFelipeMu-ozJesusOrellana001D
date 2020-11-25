@@ -1,0 +1,136 @@
+{% extends "base_generic.html" %}
+
+{% block title%}<title>ComPutin - Productos</title>{% endblock %}
+
+{% block content %}
+
+    <div  class="container" style="background-color:ghostwhite;text-align:left">
+        <div class="row">
+
+        {% for producto in cate %}
+          {% if num1 == 1 and producto.CategoriaProd == "tarjeta" %}
+            <div class="col-md tamañoCartas" style="max-width: 100%;">
+                <div class="card text-center border-secondary bg-light" >
+                    <div class="card-body">
+                    <a href="{{ producto.get_absolute_url }}"><p class="card-title">{{ producto.NombreProd }}</p></a>
+                    <a href="{{ producto.get_absolute_url }}"><img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto"></a>
+                        <div class="card-footer bg-light">
+                            <div>
+                                <div class="alert alert-primary">
+                                ${{ producto.PrecioProd }}
+                                </div>
+                            {% if producto.StockProd == 0 %}
+                            <a href="#" class="btn btn-danger" ><i class="fas fa-exclamation-triangle" style="margin: 0%;"></i></a>
+                            {% else %}
+                            <a href="{% url 'carrito:agregar_producto' producto.idProd %}" class="btn btn-primary" ><i class="fas fa-cart-plus" style="margin: 0%;"></i></a>
+                            {% endif %}
+                            <a href="{{ producto.get_absolute_url }}" class="btn btn-success" ><i class="far fa-eye"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          {% endif %}
+          {% if num1 == 2 and producto.CategoriaProd == "almacenamiento" %}
+           <div class="col-md tamañoCartas" style="max-width: 100%;">
+                    <div class="card text-center border-secondary bg-light" >
+                        <div class="card-body">
+                        <a href="{{ producto.get_absolute_url }}"><p class="card-title">{{ producto.NombreProd }}</p></a>
+                        <a href="{{ producto.get_absolute_url }}"><img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto"></a>
+                            <div class="card-footer bg-light">
+                                <div>
+                                    <div class="alert alert-primary">
+                                    ${{ producto.PrecioProd }}
+                                    </div>
+                                {% if producto.StockProd == 0 %}
+                                <a href="#" class="btn btn-danger" ><i class="fas fa-exclamation-triangle" style="margin: 0%;"></i></a>
+                                {% else %}
+                                <a href="{% url 'carrito:agregar_producto' producto.idProd %}" class="btn btn-primary" ><i class="fas fa-cart-plus" style="margin: 0%;"></i></a>
+                                {% endif %}
+                                <a href="{{ producto.get_absolute_url }}" class="btn btn-success" ><i class="far fa-eye"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          {% endif %}
+          {% if num1 == 3 and producto.CategoriaProd == "perifericos" %}
+           <div class="col-md tamañoCartas" style="max-width: 100%;">
+                    <div class="card text-center border-secondary bg-light" >
+                        <div class="card-body">
+                        <a href="{{ producto.get_absolute_url }}"><p class="card-title">{{ producto.NombreProd }}</p></a>
+                        <a href="{{ producto.get_absolute_url }}"><img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto"></a>
+                            <div class="card-footer bg-light">
+                                <div>
+                                    <div class="alert alert-primary">
+                                    ${{ producto.PrecioProd }}
+                                    </div>
+                                {% if producto.StockProd == 0 %}
+                                <a href="#" class="btn btn-danger" ><i class="fas fa-exclamation-triangle" style="margin: 0%;"></i></a>
+                                {% else %}
+                                <a href="{% url 'carrito:agregar_producto' producto.idProd %}" class="btn btn-primary" ><i class="fas fa-cart-plus" style="margin: 0%;"></i></a>
+                                {% endif %}
+                                <a href="{{ producto.get_absolute_url }}" class="btn btn-success" ><i class="far fa-eye"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          {% endif %}
+          {% if num1 == 4 and producto.CategoriaProd == "componente pc" %}
+           <div class="col-md tamañoCartas" style="max-width: 100%;">
+                    <div class="card text-center border-secondary bg-light" >
+                        <div class="card-body">
+                        <a href="{{ producto.get_absolute_url }}"><p class="card-title">{{ producto.NombreProd }}</p></a>
+                        <a href="{{ producto.get_absolute_url }}"><img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto"></a>
+                            <div class="card-footer bg-light">
+                                <div>
+                                    <div class="alert alert-primary">
+                                    ${{ producto.PrecioProd }}
+                                    </div>
+                                {% if producto.StockProd == 0 %}
+                                <a href="#" class="btn btn-danger" ><i class="fas fa-exclamation-triangle" style="margin: 0%;"></i></a>
+                                {% else %}
+                                <a href="{% url 'carrito:agregar_producto' producto.idProd %}" class="btn btn-primary" ><i class="fas fa-cart-plus" style="margin: 0%;"></i></a>
+                                {% endif %}
+                                <a href="{{ producto.get_absolute_url }}" class="btn btn-success" ><i class="far fa-eye"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          {% endif %}
+          {% if num1 == 5 and producto.CategoriaProd == "equipos armados" %}
+           <div class="col-md tamañoCartas" style="max-width: 100%;">
+                    <div class="card text-center border-secondary bg-light" >
+                        <div class="card-body">
+                        <a href="{{ producto.get_absolute_url }}"><p class="card-title">{{ producto.NombreProd }}</p></a>
+                        <a href="{{ producto.get_absolute_url }}"><img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto"></a>
+                            <div class="card-footer bg-light">
+                                <div>
+                                    <div class="alert alert-primary">
+                                    ${{ producto.PrecioProd }}
+                                    </div>
+                                {% if producto.StockProd == 0 %}
+                                <a href="#" class="btn btn-danger" ><i class="fas fa-exclamation-triangle" style="margin: 0%;"></i></a>
+                                {% else %}
+                                <a href="{% url 'carrito:agregar_producto' producto.idProd %}" class="btn btn-primary" ><i class="fas fa-cart-plus" style="margin: 0%;"></i></a>
+                                {% endif %}
+                                <a href="{{ producto.get_absolute_url }}" class="btn btn-success" ><i class="far fa-eye"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+
+
+{% endblock %}

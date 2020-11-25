@@ -16,9 +16,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/estilos2.css' %}">
+ <link rel="stylesheet" href="{% static 'css/miestilo.css' %}">
     {% block link %}
     {% endblock %}
+    <!-- Chatra {literal} -->
+    <script>
+        (function(d, w, c) {
+            w.ChatraID = 'PTp2A8tE5amJt5g6M';
+            var s = d.createElement('script');
+            w[c] = w[c] || function() {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = 'https://call.chatra.io/chatra.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    </script>
+    <!-- /Chatra {/literal} -->
 </head>
 
 <body>
@@ -34,6 +48,7 @@
                         <i class="fas fa-shopping-cart" style="margin:0%;"> </i>
                     </button>
                 </div>
+
             </div>
             <div class="menu-top">
                 <label id = "botonMenu">
@@ -42,6 +57,8 @@
                     Menu
                 </label>
             </div>
+
+
             <nav id ="barra">
                 <ul class="horizontal" style="width: 100%;">
                     <li class="opcion"><a class="opcion-a" href="{% url 'index' %}" ><i class="fas fa-home"></i>Inicio</a></li>
@@ -49,56 +66,23 @@
                     <li class="opcion op-prod "><a class="opcion-a" href="{% url 'productos' %}"><i class="fas fa-microchip"></i>Productos</a>
                        <div class="hori-corec">
                             <ul class="opcion-prod" id="op1">
-                                <li class="opcion-p"><a href="">Perifericos</a>
-                                            <ul class="prod-comp">
-                                                <li><a href="">Audifonos</a></li>
-                                                <li><a href="">Microfonos</a></li>
-                                                <li><a href="">Mouse</a></li>
-                                                <li><a href="">MousePad</a></li>
-                                                <li><a href="">Teclados</a></li>
-                                                <li><a href="">Monitores</a></li>
-                                                <li><a href="">Silla Gamer</a></li>
-                                                <li><a href="">Cables De Pc</a></li>
-                                                <li><a href="">Iluminación RGB</a></li>
-                                                <li><a href="">Soportes tv</a></li>
-                                                <li><a href="">Parlantes</a></li>
-                                                <li><a href="">Camaras Web</a></li>
-                                            </ul>
+                                <li class="opcion-p"><a href="../../productofiltrado/3">Perifericos</a>
                                 </li>
                             </ul>
                             <ul class="opcion-prod" id="op2">
-                                <li class="opcion-p" ><a  href="">Tarjetas De Video</a>
-                                            <ul class="prod-comp">
-                                                <li><a href="">Nvidia</a></li>
-                                                <li><a href="">Radeon</a></li>
-                                            </ul>
+                                <li class="opcion-p" ><a  href="../../productofiltrado/1">Tarjetas De Video</a>
                                 </li>
                             </ul>
                             <ul class="opcion-prod" id="op3">
-                                <li class="opcion-p" ><a  href="">Almacenamiento</a>
-                                            <ul class="prod-comp">
-                                                <li><a href="">Discos Duros HDD</a></li>
-                                                <li><a href="">Discos duro SSD/M.2</a></li>
-                                            </ul>
+                                <li class="opcion-p" ><a  href="../../productofiltrado/2">Almacenamiento</a>
                                 </li>
                             </ul>
                             <ul class="opcion-prod" id="op4">
-                                <li class="opcion-p" ><a  href="">Componentes Pc</a>
-                                    <ul class="prod-comp">
-                                        <li><a href="">Placas Madre</a></li>
-                                        <li><a href="">Procesadores</a></li>
-                                        <li><a href="">Memorias Ram</a></li>
-                                        <li><a href="">Gabinetes   </a></li>
-                                        <li><a href="">Fuentes de poder</a></li>
-                                    </ul>
+                                <li class="opcion-p" ><a  href="../../productofiltrado/4">Componentes Pc</a>
                                 </li>
                             </ul>
                             <ul class="opcion-prod" id="op5">
-                                <li class="opcion-p" ><a  href="">Equipos</a>
-                                            <ul class="prod-comp">
-                                                <li><a href="">Desktops</a></li>
-                                                <li><a href="">Notebooks</a></li>
-                                            </ul>
+                                <li class="opcion-p" ><a  href="../../productofiltrado/5">Equipos Armados</a>
                                 </li>
                             </ul>
                        </div>
@@ -117,8 +101,8 @@
                                     {% endif %}
                                     <li class="opcion-p" ><a  href="{% url 'logout' %}">Cerrar sesión</a></li>
                                     {% else %}
-                                <a class="opcion-a" href="{% url 'login' %}"><i class="fas fa-user"></i>Login</a>
-                                <ul class="opcion-prod2">
+                                    <a class="opcion-a" href="#"><i class="fas fa-user"></i>Login</a>
+                                    <ul class="opcion-prod2">
                                     <li class="opcion-p" ><a href="{% url 'login' %}" >Ingresar</a></li>
                                     <li class="opcion-p" ><a  href="{% url 'registro' %}">Registrar</a></li>
                                 </ul>
@@ -159,17 +143,15 @@
         {% if messages %}
             {% for message in messages %}
                 {% if message.tags == 'success' %}
-                <div class="toast" data-autohide="true" style="position: absolute;right: 1%;top: 15%;z-index:3">
-                    <div class="toast-header" style="background-color: rgb(177, 131, 33);">
-                      <strong class="mr-auto" style="color: black;">Registro</strong>
-
-                      <small class="text-muted">5 mins ago</small>
-                      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+                <div class="toast" data-autohide="true" style="position: fixed;right: 1%;top: 15%;z-index:3">
+                    <div class="toast-header" style="background-color: rgb(0, 255, 234);">
+                        <div class="rounded mr-2" style="height: 16px;width: 16px;background-color: green;"></div>
+                        <strong class="mr-auto" style="color: black;">Notificaciones </strong>
+                        <small class="text-muted">hace 1 min</small>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
                     </div>
                     <div class="toast-body">
-                      Cuenta creada exitosamente, Bienvenid@s a Computin
-                        <br>
-                      Hola  {{message}}
+                      <h6>{{message}}</h6>
                     </div>
                 </div>
                 {% endif%}
@@ -185,8 +167,8 @@
             <div class="row">
                 <div class="col-md-4 mx-auto">
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4">computin</h5>
-                    <p>Esta tienda tiene todos sus productos en el mejor estado y ofrecemos garantia por cada producto.<br>Si es que tiene algun problema con un producto
-                    puede contactarnos en nuestro correo electronico : computin@gmail.com</p>
+                    <p>Nuestra tienda tiene todos sus productos en el mejor estado y ofrecemos garantia por cada producto.<br>Si es que tiene algun problema con un producto
+                    puede contactarnos en nuestro correo electronico : tiendacomputin@gmail.com</p>
                 </div>
                 <hr>
                 <div class="col-md-2 mx-auto">
@@ -235,6 +217,8 @@
     <script src="{% static 'js/index.js' %}"></script>
     {% load static %}
     <script src="{% static 'js/login.js' %}"></script>
+    {% load static %}
+    <script src="{% static 'js/id.js' %}"></script>
     {% block script %}
     {% endblock %}
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

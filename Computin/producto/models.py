@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse # Se utiliza para direccionar los path de nmuestro proyecto asociado al modelo
 import uuid # Se utiliza para relacionar objetos de de Instancia de productos
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 # Create your models here.
 class Producto(models.Model):
@@ -20,18 +22,40 @@ class Producto(models.Model):
 	def get_absolute_url(self):
 		return reverse('producto-detail', args=[int(self.idProd)])
 
-class Compra(models.Model):
-	idCompra = models.UUIDField(primary_key=True, default=uuid.uuid4,help_text='Id única de la compra')
-	nombre = models.CharField(max_length=150)
-	correo= models.CharField(max_length=150)
-	numTelefonico = models.IntegerField(null=True)
-	comuna = models.CharField(max_length=150)
-	direccion = models.CharField(max_length=150)
-	idProducto = models.CharField(max_length=150)
-	comentario = models.CharField(max_length=150)
+class Misdatos(models.Model):
+    User = models.ForeignKey(User, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=150)
+    apellidos = models.CharField(max_length=150)
+    correo= models.CharField(max_length=150)
+    numTelefonico = models.IntegerField(max_length=15 , null=True)
+    regiones = (
+        ('I', 'Arica y Parinacota y Tarapacá'),
+        ('II', 'Antofagasta'),
+        ('III', 'Atacama y Coquimbo'),
+        ('IV', 'Valparaíso'),
+        ('V', 'O Higgins'),
+        ('VI', 'Maule'),
+        ('VII', 'Ñuble, Biobío y La Araucanía (norte)'),
+        ('VIII', 'La Araucanía (sur)'),
+        ('IX', 'Los Ríos y Los Lagos(norte)'),
+        ('X', '    Los Lagos(Sur) y Aysén'),
+        ('XI', 'Magallanes'),
+        ('RM', 'Metropolitana de Santiago'),
+    )
+    region = models.CharField(
+        max_length=4,
+        choices=regiones,
+        blank=True,
+        default='RM',
+        help_text='Seleccione una región',
+    )
+    comuna = models.CharField(max_length=150)
+    direccion = models.CharField(max_length=150)
+    comentario = models.CharField(max_length=150,null=True, blank=True)
 
-	def __str__(self):
-		return self.nombre
 
-	def get_absolute_url(self):
-		return reverse('CompraEnd')
+    def str(self):
+        return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('login')

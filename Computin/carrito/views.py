@@ -23,7 +23,7 @@ def disminuir_producto(request, producto_id):
     carrito = Carrito(request)
     producto = Producto.objects.get(idProd = producto_id)
     carrito.disminuir(producto=producto)
-    return request("index")
+    return redirect("index")
 
 
 @login_required(login_url="/registration/login")

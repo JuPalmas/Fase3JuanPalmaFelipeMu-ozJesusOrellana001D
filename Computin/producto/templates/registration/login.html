@@ -2,7 +2,7 @@
 
 {% block content %}
 
-
+# ESTOY LOGUEADO
 {% if user.is_authenticated %}
     <div class="container" style="background-color: whitesmoke;">
         <hr><hr>
@@ -14,38 +14,56 @@
         <hr><hr>
     </div>
 
+
+
+
+# NO ESTOY LOGUEADO
 {% else %}
     <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
-        <div class="container-fluid">
-            <div class="container p-5 my-5 border" style="background-color: ghostwhite; margin-top: 20%; height: 120%;">
-                <div>
-                    <h2>Iniciar Sesión</h2>
-                    <hr>
-                    <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">Usuario: </span>
-                          </div>
-                          <input type="text" class="form-control" placeholder="Ingrese un nombre para su usuario"   {{ form.username }}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm" style="background-color: ghostwhite;border-radius: 2px;">
+                    <div class="container-fluid p-1 my-1 text-black" style="background-color: transparent; border-radius: 20px; text-align:left;">
+                        <div>
+                            <h2>Iniciar Sesión</h2>
+                            <hr>
+                            <br>
+                            <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text">Usuario: </span>
+                                  </div>
+                                  <input type="text" class="form-control" placeholder="Ingrese un nombre para su usuario"   {{ form.username }}
+                            </div>
+
+                            <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text">Contraseña: </span>
+                                  </div>
+                                  <input type="password" class="form-control" placeholder="Ingrese su contraseña"   {{ form.password }}
+                            </div>
+                        </div>  <br>
+                        {% if form.errors %}
+                        <p style="color: red;"> Usuario o contraseña incorrecta, Intenta nuevamente</p>
+                        {% endif %}
+                        <div class="container-fluid d-flex justify-content-center" >
+                            <button onclick="ingresarBoton()" class="btn btn-primary text-nowrap" type="submit">
+                            Ingresar
+                            <span id="demo2" class="spinner-border spinner-border-sm mr-2" style="display: none;float:left;margin-top:4%"></span>
+                            </button>
+                        </div>
+
+
+
+                        <input type="hidden" name="Siguiente" value="{{ next }}"> <hr>
+                        <p class="container-fluid d-flex justify-content-center"><a href="{% url 'password_reset' %}">Olvidé mi contraseña</a></p>
+                        <hr>
+                        <div class="container-fluid d-flex justify-content-center" >
+                            <a href="{% url 'social:begin' 'facebook' %}">Ingresar con Facebook</a>
+                        </div>
+
                     </div>
-
-                    <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">Contraseña: </span>
-                          </div>
-                          <input type="password" class="form-control" placeholder="Ingrese su contraseña"   {{ form.password }}
-                    </div>
-                </div>  <br>
-                {% if form.errors %}
-                <p style="color: red;"> Usuario o contraseña incorrecta, Intenta nuevamente</p>
-                {% endif %}
-                <button onclick="ingresarBoton()" class="btn btn-primary" type="submit">
-                     Ingresar<span id="demo2" class="spinner-border spinner-border-sm mr-2" style="display: none;"  ></span>
-                </button>
-
-
-                <input type="hidden" name="Siguiente" value="{{ next }}"> <hr>
-                <p><a href="{% url 'password_reset' %}">Olvidé mi contraseña</a></p>
+                </div>
             </div>
         </div>
     </form>

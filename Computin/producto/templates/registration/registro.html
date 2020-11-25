@@ -16,6 +16,8 @@
                           </div>
                           <input type="text" class="form-control" placeholder="Ingrese un nombre para su usuario"   {{ form.username }}
                     </div>
+
+                     <h7 style="float:left;">Requerido. 150 carácteres como máximo. Únicamente letras, dígitos y @/./+/-/_</h7>
                     <div class="input-group mb-3">
                           <div class="input-group-prepend">
                             <span class="input-group-text">Correo Electronico: </span>
@@ -39,6 +41,12 @@
                             <span class="input-group-text">Contraseña: </span>
                           </div>
                           <input type="password" class="form-control" placeholder="Ingrese su contraseña"   {{ form.password1 }}
+                    </div>
+                    <div style="font-size: smaller;text-align: left;">
+                       <li>Su contraseña no puede asemejarse tanto a su otra información personal.</li>
+                       <li> Su contraseña debe contener al menos 8 caracteres.</li>
+                       <li> Su contraseña no puede ser una clave utilizada comúnmente.</li>
+                       <li> Su contraseña no puede ser completamente numérica.</li>
                     </div>
                     <div class="input-group mb-3">
                           <div class="input-group-prepend">

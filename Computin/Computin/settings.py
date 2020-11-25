@@ -31,6 +31,9 @@ INSTALLED_APPS = [
     'carrito.apps.CarritoConfig',
     'ordenes.apps.OrdenesConfig',
     'colorfield',
+    'social_django',
+
+
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'
@@ -43,6 +46,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'Computin.urls'
@@ -59,6 +63,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'carrito.context_processor.precio_total_carrito',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
+
             ],
         },
     },
@@ -120,6 +127,14 @@ STATIC_ROOT = '/home/computin/Fase3JuanPalmaFelipeMu-ozJesusOrellana001D/Computi
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+#CONFIG API FACEBOOK
+SOCIAL_AUTH_FACEBOOK_KEY='4090571887639137'
+SOCIAL_AUTH_FACEBOOK_SECRET='cb0778b3b0de9d23fd96fad299696f10'
+
+AUTHENTICATION_BACKENDS = (
+'social_core.backends.facebook.FacebookOAuth2',
+'django.contrib.auth.backends.ModelBackend',
+)
 
 
 # hacia donde se redirige luego de un login exitoso
@@ -134,3 +149,6 @@ EMAIL_HOST_PASSWORD = 'duoc2020'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+
+

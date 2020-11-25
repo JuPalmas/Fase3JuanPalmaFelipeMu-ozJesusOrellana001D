@@ -24,7 +24,7 @@ def procesar_orden(request):
                 orden=orden
             )
         )
-    
+
     # bulk_create : crea registros en la bdd usando los datos del for
     OrderLine.objects.bulk_create(order_lines)
 
@@ -33,7 +33,7 @@ def procesar_orden(request):
         orden=orden,
         order_lines=order_lines,
         username=request.user.username,
-        email=request.user.email 
+        email=request.user.email
     )
 
     carrito.limpiar()

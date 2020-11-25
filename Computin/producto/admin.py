@@ -2,9 +2,9 @@
 from django.contrib import admin
 
 # Register your models here.
-from . models import Producto 
-from . models import Compra
+from . models import Producto
+from . models import Misdatos
 
 
 admin.site.register(Producto)
-admin.site.register(Compra)
+admin.site.register(Misdatos)

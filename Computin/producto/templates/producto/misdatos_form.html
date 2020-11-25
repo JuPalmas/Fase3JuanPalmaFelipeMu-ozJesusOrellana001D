@@ -1,0 +1,39 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="container-fluid">
+            <div class="container p-5 my-5 border" style="background-color: black; margin-top: 20%; height: 120%;">
+
+
+                {% if user.is_authenticated %}
+
+                        <input type="text" value={{user.username}} readonly="readonly">
+
+                        {{form.User}}
+
+
+                {% endif %}
+                <input type="text" class="form-control" placeholder="Nombre"   {{ form.nombre }}
+                <input type="text" class="form-control" placeholder="Apellidos"   {{ form.apellidos }}
+                <input type="text" class="form-control" placeholder="Correo"   {{ form.correo }}
+                <input type="number" class="form-control" placeholder="Telefono"   {{ form.numTelefonico }}
+                {{ form.region }}
+                <input type="text" class="form-control" placeholder="Comuna"   {{ form.comuna }}
+                <input type="text" class="form-control" placeholder="Direccion"   {{ form.direccion }}
+                <input type="text" class="form-control" placeholder="Comentario"   {{ form.comentario }}
+                <button type="submit" class="form-control">Guardar</button>
+            </div>
+        </div>
+    </form>
+
+
+
+# Hacer un metodo en el comboBox
+# MACH  / CRUCE
+# Realizar una busqueda por el usuario, filtrar y luego igualar
+
+{% endblock %}
