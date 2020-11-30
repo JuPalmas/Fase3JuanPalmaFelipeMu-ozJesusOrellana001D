@@ -1,7 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect
 from . models import Producto
-from . models import Misdatos
 from django.views import generic
 from django import forms
 from carrito.carrito import Carrito
@@ -104,21 +103,79 @@ class ProductoDelete(DeleteView):
     model = Producto
     success_url = reverse_lazy('index')
 
-class MisdatosCreate(CreateView):
-    model = Misdatos
-    fields = '__all__'
-
-
-class MisdatosDetailView(generic.DetailView):
-    model = Misdatos
-
-class MisdatosUpdate(UpdateView):
-    model = Misdatos
-    fields = '__all__'
 
 class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = User
         fields = ['username' ,'first_name','last_name',"email","password1","password2"]
+
+
+class EmailChangeForm(forms.Form):
+    error_messages = {
+        'email_mismatch': "Error al confirmar el email, intente nuevamente",
+        'not_changed': "¡El correo ingresado es igual al anterior, no se aplicaron cambios!",
+    }
+
+    new_email1 = forms.EmailField(
+        label="Ingrese su nuevo correo",
+        widget=forms.EmailInput,
+    )
+
+    new_email2 = forms.EmailField(
+        label="Confirme su nuevo correo",
+        widget=forms.EmailInput,
+    )
+
+    def __init__(self, user, *args, **kwargs):
+        self.user = user
+        super(EmailChangeForm, self).__init__(*args, **kwargs)
+
+    def clean_new_email1(self):
+        old_email = self.user.email
+        new_email1 = self.cleaned_data.get('new_email1')
+        if new_email1 and old_email:
+            if new_email1 == old_email:
+                raise forms.ValidationError(
+                    self.error_messages['not_changed'],
+                    code='not_changed',
+                )
+        return new_email1
+
+    def clean_new_email2(self):
+        new_email1 = self.cleaned_data.get('new_email1')
+        new_email2 = self.cleaned_data.get('new_email2')
+        if new_email1 and new_email2:
+            if new_email1 != new_email2:
+                raise forms.ValidationError(
+                    self.error_messages['email_mismatch'],
+                    code='email_mismatch',
+                )
+        return new_email2
+
+    def save(self, commit=True):
+        email = self.cleaned_data["new_email1"]
+        self.user.email = email
+        if commit:
+            self.user.save()
+        return self.user
+
+
+
+def email_change(request):
+    form = EmailChangeForm()
+    if request.method=='POST':
+        form = Email_Change_Form(User,request.POST)
+        if form.is_valid():
+            if request.user.is_authenticated:
+                if form.cleaned_data['email1']  == form.cleaned_data['email2']:
+                    user = request.user
+                    u = User.objects.get(username=user)
+                    # get the proper user
+                    u.email = form.cleaned_data['email1']
+                    u.save()
+                    return HttpResponseRedirect("/accounts/login/")
+    else:
+        return render_to_response("email_change.html", {'form':form},
+                                   context_instance=RequestContext(request))
 

@@ -12,7 +12,7 @@ body{
 header
 {
   position: fixed;
-  height: 100px;
+  height: 110px;
   width: 100%;
   background-image: url(../img/banner\ 2.png);
   z-index: 3;
@@ -24,52 +24,85 @@ header
 }
 .logo
 {
-    width: 40%;
+    width: 22%;
+    display: inline-block;
 }
 
 .logo img
 {
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     z-index: 100;
+}
+.menu-left
+{
+    width: 76%;
+    height: 100%;
+    display: inline-block;
 }
 .secion
 {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    position: relative;
-    left: 0;
-    top:-45px;
-}
-.secion div .fas
-{
-    font-size: 25px;
+   padding-top: 5px;
+   width: 100%;
+   height: auto;
+   text-align: center;
 }
 .menu-top
 {
-    height: 100%;
-    width: 20%;
-    position: relative;
-    left: -40px;
-    top:-105px;
+    height:5px;
     float: right;
+}
+.menu-top label
+{
+    position: relative;
+    top:0;
+    left:-20%;
+    width: 100%;
+    height:100%;
+}
+.menu-form
+{
+    width: 100%
+    text-align: center;
+    display: inline-block;
+}
+.menu-form input
+{
+    display: inline-block;
+    width:100%;
+}
+.menu-form input
+{
+    display: inline-block;
+    width:50%;
+}
+.menu-carro
+{
+    width:60px;
+    position: relative;
+    top:5px;
+    right: -80%;
+}
+.menu-carro .fas
+{
+    font-size: 110%;
+    color: white;
 }
 #barra
 {
    background-image: url(../img/banner\ 2.png);
-   width: 150px;
-   height: 600px;
+   width: 170px;
+   height: 800px;
    position: relative;
-   top: 0;
+   top: 38px;
    right: -300px;
    float: right;
 }
 #barra.active
 {
     transition-duration: 1s;
-    right: -20%;
+    right: -30%;
 }
 #horizontal li
 {
@@ -165,12 +198,12 @@ header
 .opcion-prod
 {
     display: none;
-    width:110%;
+    width:100%;
     height: 40px;
     background: tomato;
     position: relative;
     top:-144px;
-    left:-170px;
+    left:-175px;
     text-align: center;
 }
 .opcion-p:hover .prod-comp
@@ -338,29 +371,28 @@ p.from-control
     height: auto;
     margin-bottom: 40px;
 }
+
 .form-top-left
 {
     width: 100%;
     border: solid black 1px;
-    padding-right: 60px;
     padding-top: 30px;
     padding-bottom: 20px;
     margin-bottom: 10px;
+    text-align: center;
 }
 .form-bottom-rigth
 {
     width: 100%;
+    height: auto;
     border: solid black 1px;
-    padding-right: 60px;
     padding-top: 30px;
     margin-bottom: 10px;
 }
 .titulos-p
 {
-    width: 30%;
-    display: inline-block;
-    margin-bottom: 5px;
-    text-align: justify;
+    display: block;
+    height: 40px;
 }
 .titulos-p h2
 {
@@ -368,93 +400,143 @@ p.from-control
     font-size: 15px;
     width: 100%;
 }
+.titulos-p-cat
+{
+    display: block;
+    height: 40px;
+}
+.titulos-p-cat h2
+{
+
+    font-size: 15px;
+    width: 100%;
+    color:royalblue;
+}
 .cajaTexto
 {
-  display: inline-block;
-  width: 40%;
-  height: auto;
-  margin-bottom: 5px;
-  text-align: justify;
-
+  display:block;
+  height: 30px;
+  width: 100%;
 }
-
+#id_idProd,#id_NombreProd,#id_MarcaProd,#id_CategoriaProd,
+#id_CategoriaEsp,#id_PrecioProd,#id_StockProd
+{
+    width: 90%;
+}
 .img-pro
 {
     width: 100%;
-    text-align: centers;
+    height: 180px;
+    text-align: center;
     margin-bottom: 10px;
+    display: inline-block;
 }
 
 .cajai
 {
-    width: 80%;
+    width: 100%;
 }
 
 #id_imageProd
 {
-    font-size: 10px;
+    font-size: 7px;
     width: 65%;
 }
 .des-pro
 {
     width: 100%;
+    height:200px;
 }
-.des-pro div h2
-{
-    position: relative;
-    top: -80px;
-}
+
 #id_DescripciónProd
 {
-  width: 140%;
-  height: 100px;
+  width: 100%;
+  height: 150px;
 }
 .cajabtn
 {
     width: 100%;
     height: 100px;
+    margin-bottom: 20px;
     padding: 30px;
     background: royalblue;
 }
 
-
-@media (max-width:500px)
+@media (min-width:200px) and (max-width:500px)
 {
-    .secion
+
+    #barra
     {
-        left: 58%;
+       width: 70%;
+       height: 600px;
+       top: 38%;
+    }
+    #barra.active
+    {
+        right: -28%;
+    }
+    .opcion-prod
+    {
+
+        width:88%;
+        top:-144px;
+        left:-90%;
+    }
+    .menu-carro
+    {
+        right: -88%;
+        position:relative;
+        top:-30px;
+        left:82%;
     }
 }
-
 @media (min-width:500px) and (max-width:600px)
 {
-    .menu-top
+    #barra
     {
-        left: 0;
+       width: 60%;
+       height: 600px;
+       top: 38%;
+       right: -360px;
     }
-    .secion
+    #barra.active
     {
-        left: 55%;
+        right: -20%;
+    }
+    .opcion-prod
+    {
+
+        width:70%;
+
+    }
+    .menu-carro
+    {
+        right: -88%;
+        position:relative;
+        top:-30px;
+        left:82%;
     }
 
-    #id_DescripciónProd
-    {
-      width: 110%;
-    }
+
+
 }
 @media (min-width: 600px){
 
 
     header
     {
-      height: 110px;
+      height: 130px;
     }
-
+    #separador_header
+    {
+      height:140px ;
+    }
     .logo
     {
         width: 160px;
         height: 110px;
         text-align: center;
+        padding-top:10px;
     }
 
     .logo img
@@ -462,20 +544,44 @@ p.from-control
         width: 110px;
         height:110px;
     }
-
+    .menu-left
+    {
+        width:80%;
+        position:absolute;
+    }
+    .secion
+    {
+        padding:10px;
+    }
+    .menu-carro
+    {
+        right: -90%;
+        position:relative;
+        top:-33px;
+        left:77%;
+    }
+    .menu-carro .fas
+    {
+        font-size: 190%;
+    }
     .menu-top
     {
       display: none;
     }
+    .menu-form
+    {
+        width: 90%
+
+    }
 
     #barra
     {
-        background-image: url(../img/banner\ 2.png);
-        width: 80%;
-        height: 110px;
+        background:red;
+        width: 100%;
+        height: 0;
         position: relative;
-        top: -110px;
-        left:40px;
+        top: -81px;
+        left:0;
         transition-duration: 0s;
     }
     #barra.active
@@ -493,15 +599,16 @@ p.from-control
     {
         display:inline-block;
         width: 22%;
-        height: 100%;
+        height: 50px;
+        float:left;
     }
     .hori-corec
     {
         width:700%;
         height:0;
         position: relative;
-        top:6px;
-        left: -285%;
+        top:5px;
+        left: -255%;
         display: block;
 
     }
@@ -574,26 +681,54 @@ p.from-control
         top:-90px;
         z-index: 2;
     }
-    #id_DescripciónProd
+    /*Estilos Formulario Productos*/
+    .form-top-left
     {
-      width: 110%;
+        height:500px;
     }
 
-}
+    .titulos-p
+    {
+        display:inline-block;
+        width:30%;
+        background:red;
+        float:left;
+        margin-bottom:20px;
+    }
+    .titulos-p-cat
+    {
+        float:left;
+        display:inline-block;
+        width:100%;
+        height:auto;
+        background:orange;
+    }
+    .cajaTexto
+    {
+      display:inline-block;
+      width:69%;
+      height:40px;
+      background:green;
+      float:right;
+      margin-bottom:20px;
+    }
+    #id_idProd,#id_NombreProd,#id_MarcaProd,#id_CategoriaProd,
+    #id_CategoriaEsp,#id_PrecioProd,#id_StockProd
+    {
+        width: 90%;
+    }
 
+    /* estilos de productos*/
+    .imagen_prod{
+        width: 100%;
+        margin-left: 5%;
+    }
 
-
-/* estilos de productos*/
-.imagen_prod{
-    width: 100%;
-    margin-left: 5%;
-}
-
-.desc_prod{
-    margin-top: 15%;
-    margin-left: 15%;
-    margin-right: 15%;
-    text-align: justify;
+    .desc_prod{
+        margin-top: 15%;
+        margin-left: 15%;
+        margin-right: 15%;
+        text-align: justify;
 }
 
 
@@ -602,7 +737,11 @@ p.from-control
 {
     .hori-corec
     {
-        left: -345%;
+        left: -295%;
+    }
+    .menu-carro
+    {
+        right: -90%;
     }
     .opcion-prod
     {
@@ -622,10 +761,22 @@ p.from-control
     .cards_productos{
         max-width: 300px;
     }
-    #id_DescripciónProd
+    /*Estilos Formulario Productos*/
+    .form-top-left
     {
-      width: 90%;
+        display:inline-block;
+        width: 49%;
     }
+    .form-bottom-rigth
+    {
+        display:inline-block;
+        width: 49%;
+        float: right;
+        height: 500px;
+        background: blue;
+    }
+
+
 
 
 }
@@ -635,7 +786,11 @@ p.from-control
 
     .hori-corec
     {
-        left: -345%;
+        left: -285%;
+    }
+    .menu-carro
+    {
+        right: -89%;
     }
     .opcion-prod
     {
@@ -656,56 +811,21 @@ p.from-control
        left: 84%;
        top:-91px;
     }
-    .form-top-left
-    {
-        width: 50%;
-        height: 330px;
-        display: inline-block;
-        padding-top: 20px;
-        padding-left: 20px;
-    }
-    .form-bottom-rigth
-    {
-        display: inline-block;
-        width: 45%;
-        height: 330px;
-        float: right;
-        padding-top: 20px;
-        padding-left: 20px;
-        border: solid black 1px;
-    }
-    .img-pro
-    {
-        text-align: justify;
-    }
-    .des-pro div h2
-    {
-        top:0;
-    }
-    .des-pro div
-    {
-        display: block;
-    }
-    #id_DescripciónProd
-    {
-      width: 350px;
-      height: 130px;
-    }
-    .cajabtn
-    {
-        margin-top: 10px;
-    }
 
 
 }
 
 
 
-@media (min-width:1200px) and (max-width:1920px)
+@media (min-width:1200px)
 {
     .hori-corec
     {
-        left: -345%;
+        left: -285%;
+    }
+    .menu-carro
+    {
+        right: -92%;
     }
     .opcion-prod
     {
@@ -734,45 +854,19 @@ p.from-control
 
         left: -30px;
     }
+    /*Estilos Formulario Productos*/
     .form-top-left
     {
-        width: 50%;
-        height: 300px;
-        display: inline-block;
-        padding-top: 20px;
-        padding-left: 20px;
-        border: solid black 1px;
+        display:inline-block;
+        width: 49%;
     }
     .form-bottom-rigth
     {
-        display: inline-block;
-        width: 45%;
-        height: 300px;
+        display:inline-block;
+        width: 49%;
         float: right;
-        padding-top: 20px;
-        padding-left: 20px;
-        border: solid black 1px;
-    }
-    .img-pro
-    {
-        text-align: justify;
-    }
-    .des-pro div h2
-    {
-        top:0;
-    }
-    .des-pro div
-    {
-        display: block;
-    }
-    #id_DescripciónProd
-    {
-      width: 290px;
-      height: 190px;
-    }
-    .cajabtn
-    {
-        margin-top: 10px;
+        height: 500px;
+        background: blue;
     }
 
 }
@@ -811,18 +905,6 @@ p.from-control
     float: left;
 }
 
-.ir-arriba {
-	display:none;
-	padding:20px;
-	background:#024959;
-	font-size:20px;
-	color:#fff;
-	cursor:pointer;
-	position: fixed;
-	bottom:20px;
-	right:20px;
-	z-index:5000;
-}
 
 
 

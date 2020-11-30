@@ -23,7 +23,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('producto.urls')), # index = pagina de barra de busqueda del navegador
-
 ]
 
 urlpatterns+= static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
@@ -35,6 +34,6 @@ urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
     path('carrito/',include('carrito.urls')),
     path('ordenes/', include('ordenes.urls')),
-    path('oauth/', include('social_django.urls', namespace='social'))
+    path('social-auth/', include('social_django.urls', namespace="social")),
 
 ]

@@ -1,5 +1,8 @@
 {% extends "base_generic.html" %}
 
+
+{% block title%}<title>ComPutin - Nosotros</title>{% endblock %}
+
 {%block content %}
 
 <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
@@ -23,24 +26,24 @@
         una atención personalizada y precios competitivos.
     </p>
 
-    <div class="conteiner-fluid">
+    <div class="conteiner">
         <div class="row">
-            <div class="col-md-4">
-                <div class="container">
+            <div class="nosotros col-sm " style="margin-left:20px; margin-right:20px;">
+                <div >
                     {%load static%}
                     <a href="https://www.linkedin.com/in/juan-palma-sepúlveda-a153b2200/"><img src="{% static 'img/JUAN.png' %}"></a>
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="container">
+            <div class="nosotros col-sm " style="margin-left:20px; margin-right:20px;">
+                <div>
                    {%load static%}
                     <a href="https://www.linkedin.com/in/jesusorellanaaguilar/"><img src="{% static 'img/JESUS.png' %}"></a>
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="container">
+            <div class="nosotros col-sm " style="margin-left:20px; margin-right:20px;">
+                <div >
                     {%load static%}
                     <a href="https://www.linkedin.com/in/felipe-muñoz-lópez-b45789200/"><img src="{% static 'img/FELIPE.png' %}"></a>
                 </div>

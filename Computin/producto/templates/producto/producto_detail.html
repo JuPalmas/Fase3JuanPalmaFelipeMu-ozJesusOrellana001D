@@ -3,76 +3,77 @@
 {% block title%}<title>ComPutin - {{ producto.NombreProd }}</title>{% endblock %}
 
 {% block content %}
-<div class="row producto" style="width: 90%;">
-    <div class="col-sm" style="background-color: ghostwhite; margin-left: 2%; margin-right: 2%; border-radius: 40px;">
-        <div class="container-fluid p-1 my-1 text-black" style="background-color: transparent; border-radius: 20px; text-align:left;">
-            <h5>Incio>Productos>{{producto.CategoriaProd}}>{{ producto.NombreProd }} </h5>
-        </div>
-        
-        <div >
-            <div class="container">
-                <div class="row">
-                    <div class="align-self-center col-sm-4">                        
-                        <img class="img imagen_prod " src="{{ producto.imageProd.url}}"  alt="productos" >
-                    </div>      
-                    <div class="col-sm-8">
-                        <div class="jumbotron cuadro_venta " style="float: right;text-align:center;">
-                            <h1>{{ producto.NombreProd }}</h1>
-                            <p>ID: {{ producto.idProd }}</p>
-                            <hr>
-                            <br>
-                            <h2>$ {{ producto.PrecioProd }}</h2>
-                            <br>                
-                            {% if producto.StockProd == 0 %}
-                            <p style="color:red">Stock disponible: {{producto.StockProd}}</p>
-                            <p style="color:red">Despacho a domicilio: No</p>   
-                            <br>    
-                            <div class="alert alert-danger" role="alert">
-                                ¡Aviso, producto sin stock!
-                            </div>                
-                            
-                                                   
-                            {% endif %}                
-            
-                            {% if producto.StockProd < 5 and producto.StockProd > 0 %}
-                            <p style="color:steelblue">Stock disponible: {{producto.StockProd}}</p>
-                            <p style="color:steelblue">Despacho a domicilio: Si</p>
-                            <div class="alert alert-warning" role="alert">
-                            Stock bajo, Comuniquese con la tienda antes de hacer el pago de este producto
-                            </div>                                
-                            <a href="{% url 'carrito:agregar_producto' producto.idProd %}" class="btn btn-success"><i class="fas fa-cart-plus" style="margin: 0%;"></i> Agregar</a>
-                            {% endif %}
-            
-                            {% if producto.StockProd >= 5 %}
-                            <p style="color:green">Stock disponible: {{producto.StockProd}}</p>
-                            <p style="color:green">Despacho a domicilio: Si</p>                
-                            <a href="{% url 'carrito:agregar_producto' producto.idProd %}" class="btn btn-success"><i class="fas fa-cart-plus" style="margin: 0%;"></i> Agregar</a>
-                            {% endif %}                    
-                        </div>  
-                    </div>                      
-                </div>
-                <div class="row">                                       
-                    <div class="col-12 " style="text-align: justy;">        
-                        <pre style="font-family: Arial, Helvetica, sans-serif;
-                        white-space: pre-wrap;      
-                        white-space: -moz-pre-wrap;  
-                        white-space: -pre-wrap;      
-                        white-space: -o-pre-wrap;    
-                        word-wrap: break-word;" >{{ producto.DescripciónProd }}</pre>
-                    </div>
-                </div>
-                <hr>
-                <div class="col-sm-9" style="margin-left: 10%;">
-                    {% load static %}
-                    <img class="border-secundary w-100" src="{% static 'img/banner-envios.jpg' %}">
-                </div>
-                <hr>
-            </div>   
-        </div>         
-    </div>
-</div>  
+<div class="container">
+    <div class="row">
+        <div class="col-sm" style="background-color: ghostwhite;">
+            <div class="container-fluid p-1 my-1 text-black" style="background-color: transparent; border-radius: 20px; text-align:left;">
+                <h5>Incio>Productos>{{producto.CategoriaProd}}>{{ producto.NombreProd }} </h5>
+            </div>
 
+            <div >
+                <div class="container">
+                    <div class="row">
+                        <div class="align-self-center col-sm-4">
+                            <img class="img imagen_prod " src="{{ producto.imageProd.url}}"  alt="productos" >
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="jumbotron cuadro_venta " style="float: right;text-align:center;">
+                                <h1>{{ producto.NombreProd }}</h1>
+                                <p>ID: {{ producto.idProd }}</p>
+                                <hr>
+                                <br>
+                                <h2>$ {{ producto.PrecioProd }}</h2>
+                                <br>
+                                {% if producto.StockProd == 0 %}
+                                <p style="color:red">Stock disponible: {{producto.StockProd}}</p>
+                                <p style="color:red">Despacho a domicilio: No</p>
+                                <br>
+                                <div class="alert alert-danger" role="alert">
+                                    ¡Aviso, producto sin stock!
+                                </div>
+
+
+                                {% endif %}
+
+                                {% if producto.StockProd < 5 and producto.StockProd > 0 %}
+                                <p style="color:steelblue">Stock disponible: {{producto.StockProd}}</p>
+                                <p style="color:steelblue">Despacho a domicilio: Si</p>
+                                <div class="alert alert-warning" role="alert">
+                                Stock bajo, Comuniquese con la tienda antes de hacer el pago de este producto
+                                </div>
+                                <a href="{% url 'carrito:agregar_producto' producto.idProd %}" class="btn btn-success"><i class="fas fa-cart-plus" style="margin: 0%;"></i> Agregar</a>
+                                {% endif %}
+
+                                {% if producto.StockProd >= 5 %}
+                                <p style="color:green">Stock disponible: {{producto.StockProd}}</p>
+                                <p style="color:green">Despacho a domicilio: Si</p>
+                                <a href="{% url 'carrito:agregar_producto' producto.idProd %}" class="btn btn-success"><i class="fas fa-cart-plus" style="margin: 0%;"></i> Agregar</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 " style="text-align: justy;">
+                            <pre style="font-family: Arial, Helvetica, sans-serif;
+                            white-space: pre-wrap;
+                            white-space: -moz-pre-wrap;
+                            white-space: -pre-wrap;
+                            white-space: -o-pre-wrap;
+                            word-wrap: break-word;" >{{ producto.DescripciónProd }}</pre>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col-sm-9" style="margin-left: 15%;">
+                        {% load static %}
+                        <img class="border-secundary w-100" src="{% static 'img/banner-envios.jpg' %}">
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 
-    
+

@@ -47,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+
 ]
 
 ROOT_URLCONF = 'Computin.urls'
@@ -131,10 +132,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SOCIAL_AUTH_FACEBOOK_KEY='4090571887639137'
 SOCIAL_AUTH_FACEBOOK_SECRET='cb0778b3b0de9d23fd96fad299696f10'
 
-AUTHENTICATION_BACKENDS = (
-'social_core.backends.facebook.FacebookOAuth2',
-'django.contrib.auth.backends.ModelBackend',
-)
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {'fields': 'id, name, email'}
+
+
+
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+LOGIN_ERROR_URL = '/login/'
 
 
 # hacia donde se redirige luego de un login exitoso
@@ -149,6 +160,8 @@ EMAIL_HOST_PASSWORD = 'duoc2020'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+
 
 
 

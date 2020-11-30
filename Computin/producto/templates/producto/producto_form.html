@@ -6,10 +6,9 @@
     {% if user.username == "computin" %}
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="container-fluid">
-                <div class="container p-5 my-5 border" style="background-color: ghostwhite; margin-top: 20%; height: 120%;">
+            <div class="container" style="background-color: ghostwhite; margin-top: 0%; height: 120%;">
                     <div class="titulo-prin">
-                        <h1>Administración Producto</h1>
+                        <h2>Administración Producto</h2>
                     </div>
                     <div class="form-top-left">
                         <div class="titulos-p">
@@ -30,12 +29,18 @@
                         <div class="cajaTexto">
                             {{ form.MarcaProd }}
                          </div>
+                        <div class="titulos-p-cat">
+                            <h2 >tarjeta - almacenamiento - perifericos - componente pc - equipos armados </h2>
+                        </div>
                         <div class="titulos-p">
                             <h2 for="">Categoria Producto: </h2>
                          </div>
                         <div class="cajaTexto">
                             {{ form.CategoriaProd }}
                          </div>
+                        <div class="titulos-p-cat">
+                            <h2 >Destacados - Ofertas - Populares - Ninguno</h2>
+                        </div>
                         <div class="titulos-p">
                            <h2 for="">Categoria Especial: </h2>
                          </div>
@@ -74,7 +79,6 @@
                        <input type="submit"  class="btn btn-warning" value="Guardar">
                    </div>
                 </div>
-            </div>
         </form>
     {% else %}
         <div class="container p-5 my-5 border" style="background-color: ghostwhite; margin-top: 20%; height: 120%;">

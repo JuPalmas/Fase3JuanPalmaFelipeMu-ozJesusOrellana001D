@@ -1,4 +1,5 @@
 {% extends "base_generic.html" %}
+{% block title%}<title>ComPutin - Registro </title>{% endblock %}
 
 {% block content %}
 
@@ -6,7 +7,7 @@
     <form method="POST" action="">
         {% csrf_token %}
         <div class="container-fluid">
-            <div class="container p-5 my-5 border" style="background-color: ghostwhite; margin-top: 20%; height: 120%;">
+            <div class="container p-5 my-4 border" style="background-color: ghostwhite; margin-top: 20%; height: 120%;">
 
                     <h2>Registrar Sesión</h2>
                     <hr>
@@ -59,7 +60,7 @@
                     <p style="color: red;"> Ha ocurrido un error,Vuelva intentarlo nuevamente</p>
                     {% endif %}
 
-                <input class="btn btn-primary" type="submit" value="Registrar">
+                <input class="btn btn-primary" type="submit" value="Registrarme">
 
                 <input type="hidden" name="Siguiente" value="{{ next }}"> <hr>
             </div>

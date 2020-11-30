@@ -44,3 +44,21 @@ function ingresarBoton()
 {
     document.getElementById("demo2").style.display = "block";
 }
+
+/*boton para subir*/
+window.onscroll = function(){
+    if (document.documentElement.scrollTop > 100){
+        document.querySelector('.go-up-container')
+        .classList.add('show');
+    }else{
+        document.querySelector('.go-up-container')
+        .classList.remove('show');
+    }
+}
+
+document.querySelector('.go-up-container').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});

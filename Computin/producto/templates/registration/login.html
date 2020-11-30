@@ -1,15 +1,50 @@
 {% extends "base_generic.html" %}
 
+{% block title%}<title>ComPutin - Inicio de sesión </title>{% endblock %}
+
 {% block content %}
 
-# ESTOY LOGUEADO
+
 {% if user.is_authenticated %}
     <div class="container" style="background-color: whitesmoke;">
         <hr><hr>
         <div class="row">
-            <div class="btn btn-primary">
-                <a href="{% url 'password_reset' %}" style="color: white;">Cambiar mi contraseña</a>
+            <div class="col-sm-12" style="text-aling:left;">
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Mis datos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <th scope="row">Usuario</th>
+                        <td>{{user.username}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td>{{user.email}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Contraseña</th>
+                        <td><a class="btn btn-primary"href="{% url 'password_reset' %}" style="color: white;">Cambiar mi contraseña</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Nombre</th>
+                        <td>{{user.first_name}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Apellido</th>
+                        <td>{{user.last_name}}</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+
+
             </div>
+
         </div>
         <hr><hr>
     </div>
@@ -17,7 +52,7 @@
 
 
 
-# NO ESTOY LOGUEADO
+
 {% else %}
     <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
@@ -59,8 +94,13 @@
                         <p class="container-fluid d-flex justify-content-center"><a href="{% url 'password_reset' %}">Olvidé mi contraseña</a></p>
                         <hr>
                         <div class="container-fluid d-flex justify-content-center" >
-                            <a href="{% url 'social:begin' 'facebook' %}">Ingresar con Facebook</a>
+                            <h5>Iniciar con redes sociales</h5><br>
                         </div>
+
+                        <div class="container-fluid d-flex justify-content-center" >
+                            <a href="{% url 'social:begin' 'facebook' %}"><i class="fab fa-facebook-square " style="font-size: 50px;"></i></a>
+                        </div>
+
 
                     </div>
                 </div>

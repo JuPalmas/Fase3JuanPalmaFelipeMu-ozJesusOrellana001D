@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from django.db.models import F, Sum, IntegerField
+from django.db.models import F, Sum, IntegerField , CharField
 from producto.models import Producto
 
 User = get_user_model()
@@ -33,7 +33,7 @@ class OrderLine(models.Model):
     creado_el = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.cantidad} de {self.producto.NombreProd}'
+        return f'{str(self.cantidad)} de {self.producto.NombreProd}'
 
     class Meta:
         db_table = 'orderlines'
